@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users -View All</title>
+</head>
+<body>
+<h1>Users</h1>
+<a href="/user/add">Add a new User</a> <br/><br/>
+<table border ="1">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Birthday</th>
+        <th>Wine Preference</th>
+        <th>Food Preference</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <% for(var i=0; i<user.length; i++){ %>
+    <tr>
+        <td><%= user[i].user_id %></td>
+        <td><%= user[i].first_name %> </td>
+        <td><%= user[i].last_name %> </td>
+        <td><%= user[i].age %> </td>
+        <td><%= user[i].sex %> </td>
+        <td><%= user[i].day+'/'+ user[i].month+'/'+user[i].year %> </td>
+        <td><%= user[i].wine_preference %> </td>
+        <td><%= user[i].food_preference %> </td>
+        <td><%= user[i].email %> </td>
+        <td>
+            <a href='/user/edit/?user_id=<%= user[i].user_id %> '>
+                Edit
+            </a>
+        </td>
+        <% } %>
+    </tr>
+</table>
+</body>
+</html>
+
+

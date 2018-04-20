@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wineries - Add</title>
+</head>
+<body>
+<h1>Add A New Winery</h1>
+<form action="/winery/insert" method="get"> <br/>
+
+    Name: <input name="name" type="text" /><br/>
+    Varietals Sold: <input name="varietals" type="text" /><br/>
+
+    Region
+    <br />
+    <% for(var i=0; region_result.length>i;i++) {
+        var checked = "";
+    %>
+    <input type = "radio" name="region_id" <%= checked %> value=    "<%= region_result[i].region_id %>">
+    <%= region_result[i].name %>
+    <br />
+    <% } %>
+    <br/>
+    <input type="submit" />
+
+</form>
+</body>
+</html>

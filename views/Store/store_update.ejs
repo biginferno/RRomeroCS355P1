@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store - Add</title>
+</head>
+<body>
+<h1>Edit Store</h1>
+<br/>
+<form action="/store/update" method="get">
+    User Name:
+    <input id="name"
+           name="name"
+           type="text" value="<%= store.name %>"
+    />
+    <br/>
+    Varietals Sold:
+    <input id="specialty"
+           name="specialty"
+           type="text" value="<%= store.specialty %>"
+    />
+    <br/>
+    <input  type="hidden"
+            id= "store_id"
+            name="store_id"
+            value="<%= store.store_id %>"
+    />
+
+    <br />
+
+
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>

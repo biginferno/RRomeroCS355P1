@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine - Add</title>
+</head>
+<body>
+<h1>Edit Wine</h1>
+<br/>
+<form action="/wine/update" method="get">
+    Wine Name:
+    <input id="name"
+           name="name"
+           type="text" value="<%= wine.name %>"
+    />
+    <br/>
+    Color:
+    <input id="color"
+           name="color"
+           type="text" value="<%= wine.color %>"
+    />
+    <br/>
+    Wine Varietal:
+    <input id="varietals"
+           name="varietals"
+           type="text" value="<%= wine.varietals %>"
+    />
+    <br/>
+    ABV:
+    <input id="ABV"
+           name="ABV"
+           type="text" value="<%= wine.ABV %>"
+    />
+    <br/>
+    Year:
+    <input
+            id= "year"
+            name="year"
+            value="<%= wine.year %>"
+    />
+
+
+    <input  type="hidden"
+            id= "wine_id"
+            name="wine_id"
+            value="<%= wine.wine_id %>"
+    />
+
+
+    <br />
+
+
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>

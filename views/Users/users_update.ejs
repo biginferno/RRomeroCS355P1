@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users - Add</title>
+</head>
+<body>
+<h1>Edit User</h1>
+<br/>
+<form action="/user/update" method="get">
+    User Name:
+    <input id="name"
+           name="name"
+           type="text" value="<%= user.name %>"
+    />
+    <br/>
+    Sex:
+    <input id="sex"
+           name="sex"
+           type="text" value="<%= user.sex %>"
+    />
+    <br/>
+    Age:
+    <input id="age"
+           name="age"
+           type="text" value="<%= user.age %>"
+           />
+    <br/>
+    Day:
+    <input id="day"
+           name="day"
+           type="text" value="<%= user.day %>"
+    />
+    <br/>
+    Month:
+    <input
+           id= "month"
+           name="month"
+           value="<%= user.month %>"
+    />
+    Year:
+    <input id="year"
+           name="year"
+           type="text" value="<%= user.year %>"
+    />
+    <br/>
+    Wine Preference:
+    <input id="wine_preference"
+           name="wine_preference"
+           type="text" value="<%= user.wine_preference %>"
+    />
+    <br/>
+    Food Preference:
+    <input id="food_preference"
+           name="food_preference"
+           type="text" value="<%= user.food_preference %>"
+    />
+    <br/>
+    Email
+    <input
+            id= "email"
+            name="email"
+            type="text" value="<%= user.email %>"
+    />
+    <br/>
+    <input  type="hidden"
+            id= "user_id"
+            name="user_id"
+            value="<%= user.user_id %>"
+    />
+    <br />
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food -View All</title>
+</head>
+<body>
+<h1>Food</h1>
+<a href="/food/add">Add a new Food</a> <br/><br/>
+
+<table border ="1">
+    <tr>
+        <th>Food Name</th>
+        <th>Meal Designation</th>
+        <th>Meal Type</th>
+        <th>Actions</th>
+
+    </tr>
+    <% for(var i=0; i<food.length; i++){ %>
+    <tr>
+        <td><%= food[i].name %> </td>
+        <td><%= food[i].meal_designation %> </td>
+        <td><%= food[i].meal_type %> </td>
+
+        <td>
+            <a href='/food/edit/?food_id=<%= food[i].food_id %> '>
+                Edit
+            </a>
+        </td>
+        <% } %>
+    </tr>
+
+
+</table>
+</body>
+</html>

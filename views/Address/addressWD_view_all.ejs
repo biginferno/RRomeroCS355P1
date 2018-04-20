@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address -View All</title>
+</head>
+<body>
+<h1>Address</h1>
+<a href="/addressWD/add">Add a new Address</a> <br/><br/>
+<table border ="1">
+    <tr>
+        <th>Street Number and Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Zip Code</th>
+        <th>Actions</th>
+    </tr>
+    <% for(var i=0; i<addressWD.length; i++){ %>
+    <tr>
+        <td><%= addressWD[i].street %> </td>
+        <td><%= addressWD[i].city %> </td>
+        <td><%= addressWD[i].state %> </td>
+        <td><%= addressWD[i].country %> </td>
+        <td><%= addressWD[i].zip_code %> </td>
+        <td>
+            <a href='/addressWD/edit/?addressWD_id=<%= addressWD[i].addressWD_id %> '>
+                Edit
+            </a>
+        </td>
+        <% } %>
+    </tr>
+</table>
+</body>
+</html>

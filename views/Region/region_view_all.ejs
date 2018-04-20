@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Region -View All</title>
+</head>
+<body>
+<h1>Region</h1>
+
+<a href="/region/add">Add a new Region</a> <br/><br/>
+
+<table border ="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Growing Season</th>
+        <th>Country</th>
+        <th>Actions</th>
+    </tr>
+    <% for(var i=0; i<region.length; i++){ %>
+    <tr>
+        <td><%= region[i].region_id %></td>
+        <td><%= region[i].name %> </td>
+        <td><%= region[i].growing_seasons %> </td>
+        <td><%= region[i].country %> </td>
+        <td>
+            <a href='/region/edit/?region_id=<%= region[i].region_id %> '>
+                Edit
+            </a>
+        </td>
+        <% } %>
+    </tr>
+
+
+</table>
+</body>
+</html>

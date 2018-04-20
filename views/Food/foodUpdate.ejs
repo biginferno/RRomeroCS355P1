@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food - Add</title>
+</head>
+<body>
+<h1>Edit Foods</h1>
+<br/>
+<form action="/food/update" method="get">
+    Food Name:
+    <input id="name"
+           name="name"
+           type="text" value="<%= food.name %>"
+    />
+    <br/>
+    Meal Designation:
+    <input id="meal_designation"
+           name="meal_designation"
+           type="text" value="<%= food.meal_designation %>"
+    />
+    <br/>
+    Meal Type:
+    <input id="meal_type"
+           name="meal_type"
+           type="text" value="<%= food.meal_type %>"
+    />
+    <br/>
+    <input  type="hidden"
+            id= "food_id"
+            name="food_id"
+            value="<%= food.food_id %>"
+    />
+
+    <br />
+
+
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>

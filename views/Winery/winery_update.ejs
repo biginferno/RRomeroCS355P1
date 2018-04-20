@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Winery - Add</title>
+</head>
+<body>
+<h1>Edit Winery</h1>
+<br/>
+<form action="/winery/update" method="get">
+    User Name:
+    <input id="name"
+           name="name"
+           type="text" value="<%= winery.name %>"
+    />
+    <br/>
+    Varietals Sold:
+    <input id="varietals"
+           name="varietals"
+           type="text" value="<%= winery.varietals %>"
+    />
+    <br/>
+    <input  type="hidden"
+            id= "winery_id"
+            name="winery_id"
+            value="<%= winery.winery_id %>"
+    />
+    <br />
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>

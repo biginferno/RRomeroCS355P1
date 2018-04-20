@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Region - Add</title>
+</head>
+<body>
+<h1>Edit Region</h1>
+<br/>
+<form action="/region/update" method="get">
+
+    Region Name:
+    <input id="name"
+           name="name"
+           type="text" value="<%= region.name %>"
+    /><br/>
+    Growing Seasons:
+    <input id="growing_seasons"
+           name="growing_seasons"
+           type="text" value="<%= region.growing_seasons %>"
+    /><br/>
+    Country:
+    <input id="country"
+           name="country"
+           type="text" value="<%= region.country %>"
+    /><br/>
+    <input  type="hidden"
+            id= "region_id"
+            name="region_id"
+            value="<%= region.region_id %>"
+    /><br /><br />
+    <input type="submit" />
+</form>
+</body>
+</html>

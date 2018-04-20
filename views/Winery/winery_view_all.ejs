@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Winery -View All</title>
+</head>
+<body>
+<h1>Wineries</h1>
+<a href="/winery/add">Add a new Winery</a> <br/><br/>
+<table border ="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Varietals</th>
+        <th>Actions</th>
+    </tr>
+    <% for(var i=0; i<winery.length; i++){ %>
+    <tr>
+        <td><%= winery[i].winery_id %></td>
+        <td><%= winery[i].name %> </td>
+        <td><%= winery[i].varietals %> </td>
+        <td>
+            <a href='/winery/edit/?winery_id=<%= winery[i].winery_id %> '>
+                Edit
+            </a>
+        </td>
+        <% } %>
+    </tr>
+</table>
+</body>
+</html>
