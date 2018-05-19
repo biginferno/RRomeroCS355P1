@@ -45,7 +45,7 @@ router.get('/edit', function(req,res){
         if(err) {res.send(err); }
         else{
             res.render('winery/winery_update',
-                {winery:result[0][0]}
+                {winery:result[0][0], region:result[1]}
             );
         }
     });
@@ -62,5 +62,18 @@ router.get('/update', function(req, res) {
         }
     });
 });
+
+router.get('/delete', function(req, res) {
+    winery_dal.delete(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/winery/all');
+        }
+    });
+});
+
+
 
 module.exports=router;

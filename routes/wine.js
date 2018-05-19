@@ -15,13 +15,11 @@ router.get('/all',function(req,res,next){
     })
 });
 router.get('/add',function(req,res,next){
-    winery_dal.getAll(function(err,result){
+    wine_dal.getInfo(req.query.wine_id, function(err,result){
         if (err){
-            console.log(err);
             res.send(err);
         } else {
-            console.log(result);
-            res.render('wine/wine_add', {winery_result:result});
+            res.render('wine/wine_add', {wine:result[0],store_result:result[1],winery_result:result[2]});
         }
     })
 });
@@ -41,13 +39,24 @@ router.get('/edit', function(req,res){
         if(err) {res.send(err); }
         else{
             res.render('wine/wine_update',
-                {wine:result[0][0]}
+                {wine:result[0][0],store_result:result[1],winery_result:result[2]}
             );
         }
     });
 });
 router.get('/update', function(req, res) {
     wine_dal.update(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/wine/all');
+        }
+    });
+});
+
+router.get('/delete', function(req, res) {
+    wine_dal.delete(req.query, function(err, result){
         if(err) {
             res.send(err);
         }

@@ -13,17 +13,15 @@ router.get('/all',function(req,res,next){
             res.render('store/store_view_all', {store:result});
         }
     })
-
 });
 
 router.get('/add',function(req,res) {
-
-    addressWD_dal.getAll(function(err,result) {
+    store_dal.getInfo(req.query.store_id, function(err,result) {
         if(err){
             res.send(err);
         }
         else {
-            res.render('store/store_add',{addressWD_result:result[0]});
+            res.render('store/store_add',{store_result:result[0],addressWD_result:result[1]});
         }
     });
 
@@ -46,7 +44,7 @@ router.get('/edit', function(req,res){
         if(err) {res.send(err); }
         else{
             res.render('store/store_update',
-                {store:result[0][0]}
+                {store:result[0][0],addressWD_result:result[1]}
             );
         }
     });
@@ -55,6 +53,17 @@ router.get('/edit', function(req,res){
 
 router.get('/update', function(req, res) {
     store_dal.update(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/store/all');
+        }
+    });
+});
+
+router.get('/delete', function(req, res) {
+    store_dal.delete(req.query, function(err, result){
         if(err) {
             res.send(err);
         }

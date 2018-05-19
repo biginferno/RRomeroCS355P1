@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 7</title>
+</head>
+<body>
+<h1> A query utilizing a JOIN, GROUP BY, HAVING <br/>
+    and an derived function (avg, min, max, etc.)</h1>
+
+<table border ="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Wine Year</th>
+        <th>Wine ID</th>
+    </tr>
+    <% for(var i=0; i<query7.length; i++){ %>
+    <tr>
+        <td><%= query7[i].first_name %> </td>
+        <td><%= query7[i].last_name %> </td>
+        <td><%= query7[i].year %> </td>
+        <td><%= query7[i].wine_id %> </td>
+
+        <% } %>
+    </tr>
+</table>
+<h2>SQL Code:</h2>
+<h2>select u.first_name, u.last_name,u.year,uw.wine_id from user u <br/>
+    left join user_wine uw on u.user_id= uw.user_id <br/>
+    group by u.year <br/>
+    having count(uw.wine_id) = 1;</h2>
+</body>
+</html>

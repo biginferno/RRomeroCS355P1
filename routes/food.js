@@ -13,11 +13,16 @@ router.get('/all',function(req,res,next){
             res.render('food/food_view_all', {food:result});
         }
     })
-
 });
 
 router.get('/add',function(req,res) {
-    res.render('food/food_add');
+    food_dal.getInfo(req.query.food_id, function (err,result){
+       if(err)
+           res.send(err);
+       else{
+           res.render('food/food_add',{Food:result[0], store_result:result[1] });
+       }
+    });
 });
 
 router.get('/insert', function(req,res){
@@ -37,7 +42,7 @@ router.get('/edit', function(req,res){
         if(err) {res.send(err); }
         else{
             res.render('food/foodUpdate',
-                {food:result[0][0]}
+                {food:result[0][0], store_result:result[1]}
             );
         }
     });
@@ -46,6 +51,17 @@ router.get('/edit', function(req,res){
 
 router.get('/update', function(req, res) {
     food_dal.update(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/food/all');
+        }
+    });
+});
+
+router.get('/delete', function(req, res) {
+    food_dal.delete(req.query, function(err, result){
         if(err) {
             res.send(err);
         }

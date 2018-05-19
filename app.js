@@ -13,6 +13,7 @@ var winery = require('./routes/winery');
 var region = require('./routes/region');
 var store = require('./routes/store');
 var address = require('./routes/addressWD');
+var subqueries = require('./routes/subqueries');
 
 
 var app = express();
@@ -37,6 +38,7 @@ app.use('/winery',winery);
 app.use('/region',region);
 app.use('/store',store);
 app.use('/addressWD',address);
+app.use('/subqueries',subqueries);
 
 
 

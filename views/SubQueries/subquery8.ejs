@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 8</title>
+</head>
+<body>
+<h1>A query using ORDER BY</h1>
+
+<table border ="1">
+    <tr>
+        <th>Wine Name</th>
+        <th>Winery Name</th>
+    </tr>
+    <% for(var i=0; i<query8.length; i++){ %>
+    <tr>
+        <td><%= query8[i].winename %> </td>
+        <td><%= query8[i].name %> </td>
+        <% } %>
+    </tr>
+</table>
+<h2>SQL Code:</h2>
+<h3>select w.name as winename,wr.name <br/>
+    from wine w <br/>
+    left join winery wr on w.winery_id=wr.winery_id <br/>
+    order by wr.name;</h3>
+</body>
+</html>

@@ -9,7 +9,14 @@
     Name: <input name="name" type="text" /><br/>
     Meal Designation: <input name="meal_designation" type="text" /><br/>
     Meal Type: <input name="meal_type" type="text" /><br/>
-
+    Store
+    <br/>
+    <% for(var i=0; store_result.length>i;i++) {%>
+    <input type = "checkbox" name="store_id" value="<%= store_result[i].store_id %>">
+    <%= store_result[i].name %>
+    <br />
+    <% } %>
+    <br/>
     <br/>
     <input type="submit" />
 

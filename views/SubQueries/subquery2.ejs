@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 2</title>
+</head>
+<body>
+<h1>A query using a subquery in a JOIN</h1>
+
+<table border ="1">
+    <tr>
+        <th>Wine Name</th>
+        <th>Region Name</th>
+    </tr>
+    <% for(var i=0; i<query2.length; i++){ %>
+    <tr>
+        <td><%= query2[i].winename %> </td>
+        <td><%= query2[i].name %> </td>
+        <% } %>
+    </tr>
+</table>
+<h2>SQL Code:</h2>
+<h3>select w.name as winename, r.name<br/>
+    from winery w<br/>
+    join (select region_id, name from region where region_id < 7) as r <br/>
+    on w.region_id = r.region_id;</h3>
+</body>
+</html>

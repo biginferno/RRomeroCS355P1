@@ -38,6 +38,37 @@
             value="<%= wine.year %>"
     />
 
+    <br/>
+
+    Winery
+    <br />
+    <% for(var i=0; winery_result.length>i;i++) {
+        var checked = "";
+    %>
+    <input type = "radio" name="winery_id" <%= checked %> value="<%= winery_result[i].winery_id %>">
+    <%= winery_result[i].name %>
+    <br />
+    <% } %>
+    <br/>
+    Store
+    <br/>
+    <% for(var i=0; store_result.length>i;i++) {
+
+        var checked = "";
+        if(store_result[i].store_id != null) {
+            checked = "checked";
+        }
+    %>
+
+    <input type = "checkbox"
+           name="store_id"
+
+           value= " <%= store_result[i].store_id %> " >
+    <%= store_result[i].name  %>
+    <br />
+    <% } %>
+    <br/>
+    <br/>
 
     <input  type="hidden"
             id= "wine_id"

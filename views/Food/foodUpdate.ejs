@@ -22,9 +22,11 @@
     Meal Type:
     <input id="meal_type"
            name="meal_type"
-           type="text" value="<%= food.meal_type %>"
+           type="text"
+           value="<%= food.meal_type %>"
     />
     <br/>
+
     <input  type="hidden"
             id= "food_id"
             name="food_id"
@@ -32,6 +34,23 @@
     />
 
     <br />
+    Store
+    <br/>
+    <% for(var i=0; store_result.length>i;i++) {
+
+        var checked = "";
+        if(store_result[i].store_id != null) {
+            checked = "checked";
+        }
+    %>
+
+    <input type = "checkbox"
+           name="store_id"
+
+           value= " <%= store_result[i].store_id %> " >
+            <%= store_result[i].name  %>
+    <br />
+    <% } %>
 
 
     <br />

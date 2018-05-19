@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Winery - Add</title>
+    <title>Winery - Update</title>
 </head>
 <body>
 <h1>Edit Winery</h1>
 <br/>
 <form action="/winery/update" method="get">
-    User Name:
+    Winery Name:
     <input id="name"
            name="name"
            type="text" value="<%= winery.name %>"
@@ -19,13 +19,24 @@
            type="text" value="<%= winery.varietals %>"
     />
     <br/>
+
+    <br />
+    Region
+    <br />
+    <% for(var i=0; region.length>i;i++) {
+        var checked = "";
+    %>
+    <input type = "radio" name="region_id" <%= checked %> value=    "<%= region[i].region_id %>">
+    <%= region[i].name %>
+    <br />
+    <% } %>
+    <br />
     <input  type="hidden"
             id= "winery_id"
             name="winery_id"
             value="<%= winery.winery_id %>"
     />
-    <br />
-    <br />
+    <br/>
     <input type="submit" />
 </form>
 </body>

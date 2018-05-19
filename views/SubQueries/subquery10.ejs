@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 10</title>
+</head>
+<body>
+<h1>A query using DISTINCT</h1>
+
+<table border ="1">
+    <tr>
+        <th>Meal Type</th>
+    </tr>
+    <% for(var i=0; i<query10.length; i++){ %>
+    <tr>
+        <td><%= query10[i].meal_type %> </td>
+        <% } %>
+    </tr>
+</table>
+<h2>SQL Code:</h2>
+<h2>select distinct meal_type from food;</h2>
+</body>
+</html>

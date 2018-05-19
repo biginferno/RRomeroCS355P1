@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 5</title>
+</head>
+<body>
+<h1>A query that compares a value in the <br/>
+    outer query to a value returned by the inner query</h1>
+
+<table border ="1">
+    <tr>
+        <th>Wine Name</th>
+        <th>Wine Year</th>
+    </tr>
+    <% for(var i=0; i<query5.length; i++){ %>
+    <tr>
+        <td><%= query5[i].name %> </td>
+        <td><%= query5[i].year %> </td>
+        <% } %>
+    </tr>
+</table>
+<h2>SQL Code:</h2>
+<h2>select w.name, w.year <br/>
+    from wine w <br/>
+    having(w.year > (select avg(aw.year) from wine aw));</h2>
+</body>
+</html>

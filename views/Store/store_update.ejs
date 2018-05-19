@@ -27,7 +27,13 @@
 
     <br />
 
-
+    Address
+    <br />
+    <% for(var i=0; addressWD_result.length>i;i++) { %>
+    <input type = "checkbox" name="addressWD_id" value="<%= addressWD_result[i].addressWD_id%>">
+    <%= addressWD_result[i].street %>
+    <br />
+    <% } %>
     <br />
     <input type="submit" />
 </form>

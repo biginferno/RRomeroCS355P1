@@ -18,6 +18,23 @@
     Food Preference: <input name="food_preference" type="text" /><br/>
     Email: <input name="email" type="text" /><br/>
     <br/>
+    Foods
+    <br/>
+    <% for(var i=0; food_result.length>i;i++) {%>
+    <input type = "checkbox" name="food_id" value="<%= food_result[i].food_id %>">
+    <%= food_result[i].name %>
+    <br />
+    <% } %>
+    <br/>
+    Wines
+    <br/>
+    <% for(var i=0; wine_result.length>i;i++) {%>
+    <input type = "checkbox" name="wine_id" value="<%= wine_result[i].wine_id %>">
+    <%= wine_result[i].name %>
+    <br />
+    <% } %>
+    <br/>
+
     <input type="submit" />
 
 </form>

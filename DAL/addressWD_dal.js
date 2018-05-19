@@ -24,10 +24,26 @@ exports.insert = function(params,callback){
     });
 };
 exports.update = function(params,callback) {
-    var query = 'UPDATE addressWD SET street = ?,city=?,state=?,country=?,zip_code=? ' +
-        'WHERE addressWD_id = ?';
-    var queryData = [params.street, params.city,params.state,params.country,params.zip_code,params.addressWD_id];
+    var query = 'UPDATE addressWD SET street = ?, city=?, state=?, country=?, zip_code=? WHERE addressWD_id = ?';
+
+    var queryData = [params.street, params.city, params.state, params.country, params.zip_code, params.addressWD_id];
+
     connection.query(query, queryData, function(err,result) {
         callback(err, result);
     });
 };
+
+exports.delete=function(params,callback){
+    var query = 'Call deleteAddressWD(?)';
+    var query2='Call deleteStoreAddressWD(?)';
+    // var query3='Call deleteWineryAddressWD(?)';
+
+    var queryData = [params.addressWD_id];
+
+    connection.query(query, queryData, function(err,result) {
+        connection.query(query2, queryData, function (err, result) {
+            callback(err, result);
+        })
+    })
+};
+

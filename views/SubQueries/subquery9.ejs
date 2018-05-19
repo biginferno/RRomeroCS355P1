@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 9</title>
+</head>
+<body>
+<h1>A query using a UNION</h1>
+
+<table border ="1">
+    <tr>
+        <th>Food And Meals</th>
+    </tr>
+    <% for(var i=0; i<query9.length; i++){ %>
+    <tr>
+        <td><%= query9[i].name %> </td>
+        <% } %>
+    </tr>
+</table>
+<h2>SQL Code:</h2>
+<h3>select f.name from food f <br/>
+    union <br/>
+    select w.name as winename from wine w;</h3>
+</body>
+</html>

@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Users - Add</title>
+    <title>Users - Update</title>
 </head>
 <body>
 <h1>Edit User</h1>
 <br/>
 <form action="/user/update" method="get">
-    User Name:
-    <input id="name"
-           name="name"
-           type="text" value="<%= user.name %>"
+
+    User First Name:
+    <input id="first_name"
+           name="first_name"
+           type="text" value="<%= user.first_name %>"
+    />
+    User Last Name:
+    <input id="last_name"
+           name="last_name"
+           type="text" value="<%= user.last_name %>"
     />
     <br/>
     Sex:

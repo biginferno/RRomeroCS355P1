@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query: Question 1</title>
+</head>
+<body>
+<h1>A query using a correlated subquery</h1>
+
+<table border ="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <% for(var i=0; i<query1.length; i++){ %>
+    <tr>
+        <td><%= query1[i].first_name %> </td>
+        <td><%= query1[i].last_name %> </td>
+        <% } %>
+    </tr>
+</table>
+<br/><br/>
+<h2>SQL Code:</h2>
+<h3>select u.first_name,u.last_name<br/>
+    from user u<br/>
+    where u.addressWD_id = (select addressWD_id from addressWD where addressWD_id = 1);</h3>
+</body>
+</html>

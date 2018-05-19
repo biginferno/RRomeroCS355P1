@@ -37,7 +37,7 @@ router.get('/edit', function(req,res){
         if(err) {res.send(err);}
         else{
             res.render('address/addressWDUpdate',
-                {addressWD:result[0]}
+                {addressWD:result[0][0]}
             );
         }
     });
@@ -46,6 +46,17 @@ router.get('/edit', function(req,res){
 
 router.get('/update', function(req, res) {
     addressWD_dal.update(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/addressWD/all');
+        }
+    });
+});
+
+router.get('/delete', function(req, res) {
+    addressWD_dal.delete(req.query, function(err, result){
         if(err) {
             res.send(err);
         }
